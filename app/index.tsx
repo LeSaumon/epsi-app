@@ -1,6 +1,8 @@
-import { Text, View } from "react-native";
+
+import { Button, Text, View } from "react-native";
 
 export default function Index() {
+
   return (
     <View
       style={{
@@ -10,6 +12,7 @@ export default function Index() {
       }}
     >
       <Text>Welcome to my App</Text>
+      <Text>{}</Text>
     </View>
   );
 }
