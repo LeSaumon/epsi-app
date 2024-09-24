@@ -1,7 +1,13 @@
 
+import { useState } from "react";
 import { Button, Text, View } from "react-native";
 
 export default function Index() {
+  const [data, setData] = useState("")
+  const networkCall = async () => {
+    await fetch("http://127.0.0.1:8000/free-bikes", {
+    }).then(data => data.json()).then(data => console.log(data))
+  }
 
   return (
     <View
@@ -12,7 +18,7 @@ export default function Index() {
       }}
     >
       <Text>Welcome to my App</Text>
-      <Text>{}</Text>
+      <Button onPress={networkCall}>Info is {data ? data : "None"}</Button>
     </View>
   );
 }
